@@ -4,10 +4,13 @@
           <div class="col-4">
               <div class="input-group mb-3">
                 <button 
+                    @click="$emit('doSearch', inputText)"
                     class="btn btn-outline-secondary" 
                     type="button" 
-                    id="button-addon1">Button</button>
+                    id="button-addon1">Search</button>
                 <input 
+                    v-model="inputText"
+                    name="search"
                     type="text" 
                     class="form-control" 
                     placeholder="Inserisci il titolo del film" 
@@ -21,6 +24,16 @@
 <script>
 export default {
     name: 'Header',
+    props: {
+        value: {
+            type: String,
+        }
+    },
+    data() {
+        return {
+            inputText:'',
+        }
+    }
 }
 </script>
 

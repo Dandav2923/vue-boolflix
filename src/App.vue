@@ -2,7 +2,10 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <Header />
+    <Header 
+      :value="inputValue"
+      @doSearch="setValue($event)"
+    />
     <Main />
   </div>
 </template>
@@ -19,6 +22,17 @@ export default {
     Header,
     Main,
   },
+  data() {
+    return {
+      inputValue:'',
+    }
+  },
+  methods: {
+    setValue(value) {
+      this.inputValue = value;
+      // console.log(this.inputValue);
+    }
+  }
 };
 </script>
 
