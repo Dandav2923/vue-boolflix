@@ -1,19 +1,19 @@
 <template>
-  <div class="container">
-      <div class="row">
-          <SearchFilm
+<div class="container">
+    <div class="row">
+        <SearchFilm
             @doSearch="searchFilms($event)"
-           />
-          <Film
+        />
+        <Film
             v-for="(element, index) in film"
             :key="index"
             :title="element.title"
             :original-title="element.original_title"
             :original-language="element.original_language"
             :voted="element.vote_average"
-          />
-      </div>
-  </div>
+        />
+    </div>
+</div>
 </template>
 
 <script>
