@@ -1,16 +1,15 @@
 <template>
-<div class="container">
-    <div class="row">
-        <Film
-            v-for="(element, index) in films"
-            :key="index"
-            :title="element.title"
-            :original-title="element.original_title"
-            :original-language="element.original_language"
-            :voted="element.vote_average"
-        />
-    </div>
-</div>
+    <main class="container">
+            <Film
+                v-for="(element, index) in films"
+                :key="index"
+                :title="element.title"
+                :original-title="element.original_title"
+                :original-language="element.original_language"
+                :voted="element.vote_average"
+                :name="element.name"
+            />
+    </main>
 </template>
 
 <script>

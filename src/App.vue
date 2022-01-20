@@ -25,6 +25,7 @@ export default {
             inputTextSearch:'',
             films: [],
             query: 'https://api.themoviedb.org/3/search/movie',
+            querySeries: 'https://api.themoviedb.org/3/search/tv'
             
         }
     },
@@ -32,9 +33,10 @@ export default {
         searchFilms(value) {
             this.inputTextSearch = value
             console.log(this.inputTextSearch);
-            this.callAxios()
+            this.callAxiosFilm();
+            this.callAxiosSeries();
         },
-        callAxios () {
+        callAxiosFilm () {
             axios.get(this.query, {
                 params: {
                     api_key: 'df5b914f4cb568985555883d8eeec9a2',
@@ -44,6 +46,18 @@ export default {
             .then((results) => {
                 this.films = results.data.results;
             })
+        },
+        callAxiosSeries(){
+            axios.get(this.query, {
+                params: {
+                    api_key: 'df5b914f4cb568985555883d8eeec9a2',
+                    query: this.inputTextSearch
+                }
+            })
+            .then((results) => {
+                this.films = results.data.results;
+            })
+            .catch()
         }
     },
 }
