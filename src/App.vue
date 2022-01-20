@@ -48,7 +48,7 @@ export default {
             })
         },
         callAxiosSeries(){
-            axios.get(this.query, {
+            axios.get(this.querySeries, {
                 params: {
                     api_key: 'df5b914f4cb568985555883d8eeec9a2',
                     query: this.inputTextSearch
