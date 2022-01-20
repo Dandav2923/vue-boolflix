@@ -1,3 +1,4 @@
+// * eslint-disable *
 <template>
     <main class="container">
             <Film
@@ -7,6 +8,7 @@
                 :original-title="element.original_title"
                 :original-language="element.original_language"
                 :voted="element.vote_average"
+                :getFlags="getFlagsMethods"
             />
             <Series
                 v-for="(element, index) in series"
@@ -15,6 +17,7 @@
                 :originalName="element.original_name"
                 :originalLanguage="element.original_language"
                 :voted="element.vote_average"
+                :getFlags="getFlagsMethods"
             />
     </main>
 </template>
@@ -35,6 +38,16 @@ export default {
         Film,
         Series,
         // SearchFilm,
+    },
+    methods: {
+        getFlagsMethods(value){
+            if(value == 'en') {
+                return 'us'
+            } 
+            else {
+                return value
+            }
+        },
     },
     // data() {
     //     return {

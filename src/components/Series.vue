@@ -1,3 +1,4 @@
+// * eslint-disable *
 <template>
     <section>
         <div class="row">
@@ -28,17 +29,8 @@ export default {
         originalName: String,
         originalLanguage: String,
         voted: Number,
+        getFlags: Function,
     },
-    methods: {
-        getFlags(value){
-            if(value == 'en') {
-                return 'us'
-            } 
-            else {
-                return value
-            }
-        }
-    }
 }
 </script>
 

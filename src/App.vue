@@ -1,3 +1,4 @@
+// * eslint-disable *
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
@@ -49,7 +50,7 @@ export default {
             .then((results) => {
                 this.films = results.data.results;
                 console.log(this.films);
-            })
+            });
             axios.get(this.querySeries, {
                 params: {
                     api_key: 'df5b914f4cb568985555883d8eeec9a2',
