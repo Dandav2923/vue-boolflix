@@ -2,12 +2,12 @@
     <section>
         <div class="row">
             <div class="col-6">
-                <h1>film</h1>
+                <h1>tv series</h1>
                 <div class="title">
-                    {{ title }}
+                    {{ name }}
                 </div>
                 <div class="original-title">
-                    {{ originalTitle }}
+                    {{ originalName }}
                 </div>
                 <div class="original-language">
                     {{ originalLanguage }}
@@ -22,10 +22,10 @@
 
 <script>
 export default {
-    name: 'Film',
+    name: 'Series',
     props: {
-        title: String,
-        originalTitle: String,
+        name: String,
+        originalName: String,
         originalLanguage: String,
         voted: Number,
     }

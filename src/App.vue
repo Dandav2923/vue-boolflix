@@ -3,7 +3,10 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <Header @searchFilms="searchFilms($event)"/>
-    <Main  :films="films" />
+    <Main  
+        :films="films"
+        :series="series"
+     />
   </div>
 </template>
 
@@ -23,7 +26,8 @@ export default {
   data() {
         return {
             inputTextSearch:'',
-            films: [],
+            films: null,
+            series: null,
             query: 'https://api.themoviedb.org/3/search/movie',
             querySeries: 'https://api.themoviedb.org/3/search/tv'
             
@@ -34,7 +38,6 @@ export default {
             this.inputTextSearch = value
             console.log(this.inputTextSearch);
             this.callAxiosFilm();
-            this.callAxiosSeries();
         },
         callAxiosFilm () {
             axios.get(this.query, {
@@ -45,9 +48,8 @@ export default {
             })
             .then((results) => {
                 this.films = results.data.results;
+                console.log(this.films);
             })
-        },
-        callAxiosSeries(){
             axios.get(this.querySeries, {
                 params: {
                     api_key: 'df5b914f4cb568985555883d8eeec9a2',
@@ -55,9 +57,9 @@ export default {
                 }
             })
             .then((results) => {
-                this.films = results.data.results;
+                this.series = results.data.results;
+                console.log(this.series);
             })
-            .catch()
         }
     },
 }

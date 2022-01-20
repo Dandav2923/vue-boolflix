@@ -2,12 +2,19 @@
     <main class="container">
             <Film
                 v-for="(element, index) in films"
-                :key="index"
+                :key=" 'Id' + index"
                 :title="element.title"
                 :original-title="element.original_title"
                 :original-language="element.original_language"
                 :voted="element.vote_average"
+            />
+            <Series
+                v-for="(element, index) in series"
+                :key=" 'IdS' + index"
                 :name="element.name"
+                :originalName="element.original_name"
+                :originalLanguage="element.original_language"
+                :voted="element.vote_average"
             />
     </main>
 </template>
@@ -15,20 +22,18 @@
 <script>
 // import SearchFilm from "./SearchFilm.vue";
 import Film from "./Film.vue";
+import Series from "./Series.vue";
 // import axios from 'axios';
 
 export default {
     name: 'Main',
-    props: {
-        films : {
-            type: Array,
-            default () {
-                return [];
-            },
-        },
-    },
+    props: [
+        'films' ,
+        'series' 
+    ],
     components: {
         Film,
+        Series,
         // SearchFilm,
     },
     // data() {
