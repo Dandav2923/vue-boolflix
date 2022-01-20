@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import SearchFilm from "./SearchFilm.vue";
+import SearchFilm from "../Header/SearchFilm.vue";
 export default {
     name: 'Header',
     components: {
