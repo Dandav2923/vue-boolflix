@@ -1,9 +1,9 @@
 <template>
 <div class="container">
     <div class="row">
-        <SearchFilm
+        <!-- <SearchFilm
             @doSearch="searchFilms($event)"
-        />
+        /> -->
         <Film
             v-for="(element, index) in film"
             :key="index"
@@ -17,42 +17,50 @@
 </template>
 
 <script>
-import SearchFilm from "./SearchFilm.vue";
+// import SearchFilm from "./SearchFilm.vue";
 import Film from "./Film.vue";
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
     name: 'Main',
+    props: {
+        films : {
+            type: Array,
+            default () {
+                return [];
+            },
+        },
+    },
     components: {
         Film,
-        SearchFilm,
+        // SearchFilm,
     },
-    data() {
-        return {
-            inputTextSearch:'',
-            film: null,
-            query: 'https://api.themoviedb.org/3/search/movie',
+    // data() {
+    //     return {
+    //         inputTextSearch:'',
+    //         film: null,
+    //         query: 'https://api.themoviedb.org/3/search/movie',
             
-        }
-    },
-    methods: {
-        searchFilms(value) {
-            this.inputTextSearch = value
-            console.log(this.inputTextSearch);
-            this.callAxios()
-        },
-        callAxios () {
-            axios.get(this.query, {
-                params: {
-                    api_key: 'df5b914f4cb568985555883d8eeec9a2',
-                    query: this.inputTextSearch
-                }
-            })
-            .then((results) => {
-                this.film = results.data.results;
-            })
-        }
-    }
+    //     }
+    // },
+    // methods: {
+    //     searchFilms(value) {
+    //         this.inputTextSearch = value
+    //         console.log(this.inputTextSearch);
+    //         this.callAxios()
+    //     },
+    //     callAxios () {
+    //         axios.get(this.query, {
+    //             params: {
+    //                 api_key: 'df5b914f4cb568985555883d8eeec9a2',
+    //                 query: this.inputTextSearch
+    //             }
+    //         })
+    //         .then((results) => {
+    //             this.film = results.data.results;
+    //         })
+    //     }
+    // },
 }
 </script>
 
