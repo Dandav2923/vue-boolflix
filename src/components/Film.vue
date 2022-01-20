@@ -10,7 +10,7 @@
                     {{ originalTitle }}
                 </div>
                 <div class="original-language">
-                    {{ originalLanguage }}
+                    <i :class="'flag flag-' + getFlags(originalLanguage)" ></i>
                 </div>
                 <div class="voted">
                     {{ voted }}
@@ -28,6 +28,16 @@ export default {
         originalTitle: String,
         originalLanguage: String,
         voted: Number,
+    },
+    methods: {
+        getFlags(value){
+            if(value == 'en') {
+                return 'us'
+            } 
+            else {
+                return value
+            }
+        }
     }
 }
 </script>
