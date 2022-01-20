@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <SearchFilm
-      @doSearch="searchFilms($event)"
+      @doSearch="$emit('searchFilms',($event))"
     />
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     name: 'Header',
     components: {
       SearchFilm,
-    }
+    },
 }
 </script>
 

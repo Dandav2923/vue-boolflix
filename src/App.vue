@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <Header />
+    <Header @searchFilms="searchFilms($event)"/>
     <Main  :films="films" />
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
   data() {
         return {
             inputTextSearch:'',
-            film: null,
+            films: [],
             query: 'https://api.themoviedb.org/3/search/movie',
             
         }
@@ -42,7 +42,7 @@ export default {
                 }
             })
             .then((results) => {
-                this.film = results.data.results;
+                this.films = results.data.results;
             })
         }
     },

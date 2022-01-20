@@ -1,11 +1,8 @@
 <template>
 <div class="container">
     <div class="row">
-        <!-- <SearchFilm
-            @doSearch="searchFilms($event)"
-        /> -->
         <Film
-            v-for="(element, index) in film"
+            v-for="(element, index) in films"
             :key="index"
             :title="element.title"
             :original-title="element.original_title"
