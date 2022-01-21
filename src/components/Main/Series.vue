@@ -7,10 +7,11 @@
                 <div v-if="img == null" >
                     {{ alt }}
                 </div>
-                <div v-else class="cover">
+                <div 
+                    v-else 
+                    class="cover">
                     <img 
-                        :src="src + img"
-                        >
+                        :src="src + img">                       
                 </div>
                 <div class="title">
                     {{ name }}
