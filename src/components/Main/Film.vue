@@ -4,9 +4,15 @@
         <div class="row">
             <div class="col-6">
                 <h1>film</h1>
-                 <div class="cover">
-                    <img 
-                        :src="'https://image.tmdb.org/t/p' + img">
+                <div v-if="img == null" >
+                    {{ alt }}
+                </div>
+                <div 
+                    v-else
+                    class="cover">
+                    <img
+                        :src="src + img"
+                        >
                 </div>
                 <div class="title">
                     {{ title }}
@@ -34,8 +40,9 @@ export default {
         originalLanguage: String,
         voted: Number,
         getFlags: Function,
-        img: Image,
-        src: String
+        img: String,
+        src: String,
+        alt: String
     },
 }
 </script>

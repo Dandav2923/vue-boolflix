@@ -9,8 +9,9 @@
                 :original-language="element.original_language"
                 :voted="element.vote_average"
                 :getFlags="getFlagsMethods"
-                :src="src"
-                :img="element.backdrop_path"
+                :src="'https://image.tmdb.org/t/p/w300'"
+                :img="element.poster_path"
+                :alt="element.title"
             />
             <Series
                 v-for="(element, index) in series"
@@ -20,8 +21,9 @@
                 :originalLanguage="element.original_language"
                 :voted="element.vote_average"
                 :getFlags="getFlagsMethods"
-                :src="src"
-                :img="element.backdrop_path"
+                :src="'https://image.tmdb.org/t/p/w300'"
+                :img="element.poster_path"
+                :alt="element.name"
             />
     </main>
 </template>
