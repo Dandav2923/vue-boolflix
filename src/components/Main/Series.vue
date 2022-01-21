@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-6">
                 <h1>tv series</h1>
-                <div v-if="img == null" >
+                <div v-if="img == null">
                     {{ alt }}
                 </div>
                 <div 
