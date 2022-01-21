@@ -4,6 +4,10 @@
         <div class="row">
             <div class="col-6">
                 <h1>film</h1>
+                 <div class="cover">
+                    <img 
+                        :src="'https://image.tmdb.org/t/p' + img">
+                </div>
                 <div class="title">
                     {{ title }}
                 </div>
@@ -30,6 +34,8 @@ export default {
         originalLanguage: String,
         voted: Number,
         getFlags: Function,
+        img: Image,
+        src: String
     },
 }
 </script>

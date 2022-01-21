@@ -9,6 +9,8 @@
                 :original-language="element.original_language"
                 :voted="element.vote_average"
                 :getFlags="getFlagsMethods"
+                :src="src"
+                :img="element.backdrop_path"
             />
             <Series
                 v-for="(element, index) in series"
@@ -18,6 +20,8 @@
                 :originalLanguage="element.original_language"
                 :voted="element.vote_average"
                 :getFlags="getFlagsMethods"
+                :src="src"
+                :img="element.backdrop_path"
             />
     </main>
 </template>
