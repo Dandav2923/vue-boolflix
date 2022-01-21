@@ -12,6 +12,7 @@
                 :src="'https://image.tmdb.org/t/p/w300'"
                 :img="element.poster_path"
                 :alt="element.title"
+                :getStar="getStar"
             />
             <Series
                 v-for="(element, index) in series"
@@ -24,6 +25,7 @@
                 :src="'https://image.tmdb.org/t/p/w300'"
                 :img="element.poster_path"
                 :alt="element.name"
+                :getStar="getStar"
             />
     </main>
 </template>
@@ -50,6 +52,10 @@ export default {
                 return value
             }
         },
+        getStar(value){
+            return Math.floor(value / 2);
+        },
+        
     },
 }
 </script>

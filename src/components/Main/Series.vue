@@ -22,8 +22,14 @@
                 <div class="original-language">
                     <i :class="'flag flag-' + getFlags(originalLanguage)"></i>
                 </div>
-                <div class="voted">
-                    {{ voted }}
+                <div
+                    class="voted">
+                    <span>
+                        <i 
+                        v-for="number in 5"
+                        :key="number"
+                        :class="(number <= getStar(voted)) ? 'fas fa-star': 'far fa-star'"></i>
+                    </span>
                 </div>
             </div>
         </div>
@@ -42,6 +48,7 @@ export default {
         img: String,
         src: String,
         alt: String,
+        getStar: Function,
 
     },
 }
