@@ -1,6 +1,6 @@
 // * eslint-disable *
 <template>
-    <main class="container d-flex flex-wrap">
+    <main class="container-fluid d-flex flex-wrap bg-secondary justify-content-center">
             <Film
                 v-for="(element, index) in films"
                 :key=" 'Id' + index"
@@ -9,10 +9,11 @@
                 :original-language="element.original_language"
                 :voted="element.vote_average"
                 :getFlags="getFlagsMethods"
-                :src="'https://image.tmdb.org/t/p/w300'"
+                :src="'https://image.tmdb.org/t/p/w342'"
                 :img="element.poster_path"
                 :alt="element.title"
                 :getStar="getStar"
+                :overview="element.overview"
             />
             <Series
                 v-for="(element, index) in series"
@@ -22,10 +23,11 @@
                 :originalLanguage="element.original_language"
                 :voted="element.vote_average"
                 :getFlags="getFlagsMethods"
-                :src="'https://image.tmdb.org/t/p/w300'"
+                :src="'https://image.tmdb.org/t/p/w342'"
                 :img="element.poster_path"
                 :alt="element.name"
                 :getStar="getStar"
+                :overview="element.overview"
             />
     </main>
 </template>
