@@ -2,7 +2,7 @@
 <template>
     <section>
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 card">
                 <h1>tv series</h1>
                 <div v-if="img == null">
                     {{ alt }}

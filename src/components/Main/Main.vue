@@ -1,6 +1,6 @@
 // * eslint-disable *
 <template>
-    <main class="container">
+    <main class="container d-flex flex-wrap">
             <Film
                 v-for="(element, index) in films"
                 :key=" 'Id' + index"
